@@ -16,6 +16,9 @@ Practise DOM manipulation + Modals.
 Practise DOM manipulation and event handlers with a simple dice rolling game.
 ![Dice Game](./docs/dice.gif)
 
+### 4. Random Student Generator
+Practise Javascript promises. Names of students are listed in a text file. The app can generate a random name, shuffle the list and divide the list into equal size groups. 
+
 ## 🚧 Under Construction
 The collection will grow as I look for more ways to practise and improve specific skills.
 
