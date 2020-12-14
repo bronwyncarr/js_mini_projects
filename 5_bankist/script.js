@@ -1,9 +1,5 @@
 "use strict";
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// BANKIST APP
-
 // Data
 const account1 = {
   owner: "Jonas Schmedtmann",
@@ -61,33 +57,46 @@ const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
-const displayMovements = function (movements) {
-  movements.forEach((mov, index) => {
-    const type = mov > 0 ? "deposit" : "withdrawl"
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+// Movements
+const displayMovements = function (movements) {
+  // resets container movements to none
+  containerMovements.innerHTML = "";
+
+  //iterate over movements array for that person's array
+  movements.forEach((mov, index) => {
+    const type = mov > 0 ? "deposit" : "withdrawal";
     const html = `
       <div class="movements__row">
-          <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+          <div class="movements__type movements__type--${type}">${
+      index + 1
+    } ${type}</div>
           <div class="movements__value">${mov}</div>
         </div>
   `;
-
-  containerMovement.insertAjacentHTML('afterbegin', html);
-
+    //insert html
+    containerMovements.insertAdjacentHTML("afterbegin", html); //afterbegin will append from top, beforened will append from bottom.
   });
 };
 displayMovements(account1.movements);
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
+// Calculate and display bank balance
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} AUD`;
+};
+calcDisplayBalance(account1.movements);
 
-const currencies = new Map([
-  ["USD", "United States dollar"],
-  ["EUR", "Euro"],
-  ["GBP", "Pound sterling"],
-]);
+// Create username for account object based on initials of user
+const createUsernames = function (acc) {
+  acc.forEach((acc) => {
+    acc.username = user.owner
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word[0])
+      .join("");
+  });
+};
+createUsernames(accounts);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-/////////////////////////////////////////////////
