@@ -5,9 +5,9 @@ function userNumber(result) {
   }
   return new Promise((resolve, reject) => {
     result.randomNum = Math.floor(Math.random() * range) + 1;
-    const enteredNum = parseInt(window.prompt("Enter your guess..."));
+    const enteredNum = parseInt(window.prompt(`Guess the mystery number! Please enter a number between 1 and ${range}.`));
     if (isNaN(enteredNum) || enteredNum <= 0 || enteredNum > range) {
-      const err = new Error(`You must enter a number between 1 and ${range}. Please try again`)
+      const err = new Error(`You must enter a number between 1 and ${range}. Please try again.`)
       reject(err);
     }
     if (enteredNum === result.randomNum) {
@@ -24,7 +24,7 @@ function userNumber(result) {
 
 function tryAgain() {
   return new Promise((resolve, _reject) => {
-    if (window.confirm("Do you want to continue?")) {
+    if (window.confirm("Do you want to play again?")) {
       resolve(true);
     } else {
       resolve(false);
@@ -35,19 +35,14 @@ function tryAgain() {
 async function playGame(res) {
   try {
     const result = await userNumber(res);
-    alert(`Random number was ${result.randomNum}. You scored ${result.points} points. Your total points are ${result.total}`);
+    alert(`Random number was ${result.randomNum}. You scored ${result.points} points. Your total points are ${result.total}.`);
     const playAgain = await tryAgain();
     playAgain ? playGame(result) : alert("Thanks for playing!");
   } catch (err) {
-     alert(err);
+    alert(err);
+    const playAgain = await tryAgain();
+    playAgain ? playGame(result) : alert("Thanks for playing!");
   }
 }
 res = {}
 playGame(res);
-
-
-// const numForm = document.getElementById("num-form");
-// numForm.addEventListener("submit", function (e) {
-//     e.preventDefault();
-//     const nameInput = document.getElementById("nameInput")
-// })
