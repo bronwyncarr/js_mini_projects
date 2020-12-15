@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Country Finder</h1>
+    <h2>Search for a country to learn more...</h2>
+    <form id="country-form">
+        <label for="name-input">Country Name</label>
+        <input type="text" id="name-input">
+        <button type="sumbit">Submit</button>
+    </form>
+    <section class="results hidden">
+        <img class="flag" src="#"> 
+        <div class="info">
+            <h2 class="country-name"></h2>
+            <p class="region"></p>
+            <p class="population"></p>
+            <ul class="languages"></ul>
+            <ul class="currencies"></ul>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
