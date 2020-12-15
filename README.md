@@ -19,6 +19,9 @@ Practise DOM manipulation and event handlers with a simple dice rolling game.
 ### 4. Random Student Generator
 Practise Javascript promises. Names of students are listed in a text file. The app can generate a random name, shuffle the list and divide the list into equal size groups. 
 
+### 5. Prompt guess the number
+Practise Javascript async/await. Game using prompt window to guess a number. Points awarded based on how close the the number the guess is. Multiple goes increases the total score.
+
 ## 🚧 Under Construction
 The collection will grow as I look for more ways to practise and improve specific skills.
 
