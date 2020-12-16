@@ -27,7 +27,9 @@ Game using prompt window to guess a number. Points awarded based on how close th
 
 ### 6. Countries
 Practise fetch, promises and async function. Code contains an <code>async</code> function with <code>await</code> used for fetch calls. 
+
 *Future* - Keen to implement React.
+
 Search by country name to see facts about the country.
 ![Countries Home](./docs/country1.png)
 ![Countries Search](./docs/country2.png)
