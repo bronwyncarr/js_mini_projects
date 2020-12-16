@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Country Finder</h1>
-    <h2>Search for a country to learn more...</h2>
-    <form id="country-form">
-        <label for="name-input">Country Name</label>
-        <input type="text" id="name-input">
-        <button type="sumbit">Submit</button>
-    </form>
+    <div class="ui text container">
+        <h2>Search for a country to learn more...</h2>
+        <form id="country-form" class="ui fluid action input">
+            <input type="text" id="name-input" placeholder="Name...">
+            <button type="submit" class="ui button">Search</button>
+        </form>
+    </div>
+
     <section class="results hidden">
-        <img class="flag" src="#"> 
-        <div class="info">
-            <h2 class="country-name"></h2>
-            <p class="region"></p>
-            <p class="population"></p>
-            <ul class="languages"></ul>
-            <ul class="currencies"></ul>
+        <div class="ui container piled raised segment ">
+            <div class="content">
+                <img class="flag" src="#">
+                <div class="info">
+                    <div class="country-header">
+                        <h2 class="country-name"></h2>
+                        <h2 class="country-cioc"></h2>
+                    </div>
+                    <p class="region"></p>
+                    <p class="subregion"></p>
+                    <p class="population"></p>
+                    <p class="capital"></p>
+                    <ul class="languages"></ul>
+                    <ul class="currencies"></ul>
+                </div>
+            </div>
         </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
