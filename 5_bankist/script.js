@@ -69,12 +69,9 @@ const displayMovements = function (movements) {
     const type = mov > 0 ? "deposit" : "withdrawal";
     const html = `
       <div class="movements__row">
-          <div class="movements__type movements__type--${type}">${
-      index + 1
-    } ${type}</div>
+          <div class="movements__type movements__type--${type}">${index + 1} ${type}</div>
           <div class="movements__value">${mov}</div>
-        </div>
-  `;
+        </div>`;
     //insert html
     containerMovements.insertAdjacentHTML("afterbegin", html); //afterbegin will append from top, beforened will append from bottom.
   });

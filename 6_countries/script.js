@@ -13,7 +13,6 @@ async function fetchData(searchItem) {
 // displays info from object
 // population is converted to number and rounded to 2 decimal places for millions
 function displayInfo(country) {
-  console.log(country);
   // Make visible
   if (document.querySelector(".hidden")) {
     document.querySelector(".hidden").classList.remove("hidden");
@@ -33,14 +32,40 @@ function displayInfo(country) {
             <p>🤼 Population: ${(+country.population / 1000000).toFixed(
               2
             )} Million</p>
-            <p class="capital">🏛 Capital: ${country.capital}</p>
-            <p>${country.currencies.forEach((currency) => currency["name"])}</p>
+            <p>🏛 Capital: ${country.capital}</p>
         </div>
     `;
+    document.querySelector(".content").innerHTML = html;
 
-  country.currencies.forEach((currency) => console.log(currency["name"]));
+    // Ideas to get languages and currencies
+  // country.currencies.forEach((currency) => console.log(currency["name"]));
 
-  document.querySelector(".content").innerHTML = html;
+
+   // const ulMaker = (country, property, title) => {
+  //   const ul = document.createElement("ul");
+  //   const titleElement = document.createElement("h3");
+  //   titleElement.innerHTML = title;
+  //   const propertyDetails = country[property];
+
+  //   const listItems = propertyDetails.map((element) => {
+  //     const newLi = document.createElement("li");
+  //     newLi.innerHTML = element.name;
+  //     return newLi;
+  //   });
+
+  //   listItems.forEach((item) => ul.appendChild(item));
+
+  //   const placeHolder = document.getElementById("langauges");
+
+  //   placeHolder.appendChild(titleElement);
+  //   placeHolder.appendChild(ul);
+  // };
+
+  // country.currencies.forEach((currency) => console.log(currency["name"]));
+
+  // document.querySelector(".content").insertAdjacentHTML('afterbegin', html)
+//   ulMaker(country, "languages", "Languages:");
+//  }) 
 }
 
 // Adds event listener to submit button on form and passes value to fetchData function to fetch.
