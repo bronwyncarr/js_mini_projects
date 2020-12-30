@@ -38,4 +38,5 @@ Search by country name to see facts about the country.
 The collection will grow as I look for more ways to practise and improve specific skills.
 
 ## 📋 References
-
+Some ideas are from:
+- [The Complete JavaScript Course 2021 by Jonas Schmedtmann](https://www.udemy.com/course/the-complete-javascript-course/)
